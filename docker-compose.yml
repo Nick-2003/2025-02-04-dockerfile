@@ -1,0 +1,11 @@
+services: 
+  analysis-env: # When system loads up, can refer this particular container as analysis-env
+    # image: rocker/tidyverse:4.4.2
+    image: nt2103/mycontainer # Using version specified on Docker Hub 
+    ports: 
+      - "8787:8787" # Default port
+    volumes: 
+      # - /$(pwd):/home/rstudio/workspace
+      - .:/home/rstudio/work # . refers to the current directory
+    environment: 
+      - PASSWORD="password"
